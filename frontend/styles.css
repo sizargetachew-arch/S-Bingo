@@ -1,0 +1,223 @@
+* { box-sizing: border-box; }
+
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background: #fcf8f5; 
+    color: #333; 
+    text-align: center; 
+}
+
+.header { 
+    background: #cc0000; 
+    color: white; 
+    padding: 20px; 
+    border-radius: 0 0 20px 20px; 
+}
+
+.header h2 { margin: 0 0 10px 0; }
+
+#user-name { font-size: 14px; opacity: 0.9; }
+
+.wallet-card { 
+    background: white; 
+    margin: 20px; 
+    padding: 15px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+
+.wallet-amount { 
+    font-size: 24px; 
+    font-weight: bold; 
+    color: #cc0000; 
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    font-size: 16px;
+    color: #666;
+}
+
+.error {
+    background: #fee;
+    color: #c33;
+    padding: 15px 20px;
+    margin: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #c33;
+    display: none;
+}
+
+.error.show { display: block; }
+
+.rooms { 
+    padding: 0 20px 20px; 
+}
+
+.room-card { 
+    background: white; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+    padding: 15px; 
+    margin-bottom: 15px; 
+    border-left: 6px solid #cc0000; 
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.room-card:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.room-info-text { flex: 1; }
+
+.room-title { 
+    font-weight: bold; 
+    font-size: 18px; 
+    margin: 0 0 8px 0; 
+}
+
+.room-info { 
+    color: #666; 
+    font-size: 14px; 
+    margin: 3px 0; 
+}
+
+.room-occupancy {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.btn-join { 
+    background: #cc0000; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 6px; 
+    font-weight: bold; 
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+.btn-join:active { background: #aa0000; }
+
+.btn-join:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Game View */
+.game-view {
+    padding: 20px;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.btn-back, .btn-leave {
+    background: #cc0000;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-back:active, .btn-leave:active {
+    background: #aa0000;
+}
+
+.game-info {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.bingo-card {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.bingo-number {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.bingo-number:active {
+    transform: scale(0.95);
+}
+
+.bingo-number.selected {
+    background: #cc0000;
+    color: white;
+    border-color: #cc0000;
+}
+
+.bingo-number.free {
+    background: #cc0000;
+    color: white;
+    border-color: #cc0000;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .room-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn-join {
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    .game-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .game-header h3 {
+        margin: 0;
+    }
+    
+    .btn-back, .btn-leave {
+        width: 100%;
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S Bingo Professional</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="header">
+        <h2>S BINGO</h2>
+        <div id="user-name">እንኳን ደህና መጡ!</div>
+    </div>
+
+    <div class="wallet-card">
+        <p style="margin:0; color:#888;">የአሁኑ ሂሳብዎ</p>
+        <div class="wallet-amount" id="wallet-balance">2,350 ETB</div>
+        <div style="font-size: 12px; color: #999; margin-top: 5px;" id="games-played">0 ጋሞች</div>
+    </div>
+
+    <div id="loading" class="loading">ሞክራት...</div>
+    <div id="error" class="error"></div>
+
+    <!-- Rooms List -->
+    <div class="rooms" id="rooms-container" style="display: none;">
+        <h3 style="text-align: left;">Live Rooms (የቀጥታ ክፍሎች)</h3>
+        <div id="rooms-list"></div>
+    </div>
+
+    <!-- Game View -->
+    <div id="game-view" style="display: none;" class="game-view">
+        <div class="game-header">
+            <button class="btn-back" onclick="backToRooms()">← ተመለስ</button>
+            <h3 id="game-room-name">Room A</h3>
+            <button class="btn-leave" onclick="leaveGame()">ውጅ</button>
+        </div>
+        <div class="game-info">
+            <div>ጋምሉ #<span id="game-number"></span></div>
+            <div id="game-status">መጀመር...</div>
+        </div>
+        <div class="bingo-card" id="bingo-card"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
